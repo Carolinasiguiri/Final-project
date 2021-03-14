@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h3>Categorías</h3>
+        </div>
+        <div class="card-body">
+            <div class="form-group text-right">
+                <a class="btn btn-success" href="add-categoria">Nueva Categoría</a>
+            </div>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let categoria of categorias">
+                        <td>{{categoria.nombre}}</td>
+                        <td>{{categoria.descripcion}}</td>
+                        <td class="text-right">
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Opciones
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <button class="dropdown-item" (click)="Editar(categoria)">Editar</button>
+                                    <button class="dropdown-item" (click)="Eliminar(categoria)">Eliminar</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

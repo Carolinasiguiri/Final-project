@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h3>Editar Producto</h3>
+        </div>
+        <div class="card-body">
+            <form action="">
+                <div class="form-group">
+                    <label for="">Código</label>
+                    <input [(ngModel)]="producto.codigo" type="text" class="form-control" name="codigo">
+                </div>
+                <div class="form-group">
+                    <label for="">Nombre</label>
+                    <input [(ngModel)]="producto.nombre" type="text" class="form-control" name="nombre">
+                </div>
+                <div class="form-group">
+                    <label for="">Descripción</label>
+                    <textarea [(ngModel)]="producto.descripcion" class="col-lg-12 form-control" name="descripcion" id="descripcion" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="">Precio unitario</label>
+                    <input [(ngModel)]="producto.precio_unitario" type="number" class="form-control" name="precio_unitario">
+                </div>
+                <div class="form-group">
+                    <label for="">Stock</label>
+                    <input [(ngModel)]="producto.stock" type="number" class="form-control" name="stock">
+                </div>
+                <div class="form-group">
+                    <label for="">Categoría</label>
+                    <select [(ngModel)]="producto.categoria_id.id" class="form-control" name="categoria_id" id="categoria_id" required>
+                        <option *ngFor="let categoria of categorias" [ngValue]="categoria.id">{{categoria.nombre}}</option>
+                    </select>
+                </div>
+                <button (click)="Actualizar()" class="btn btn-primary">Actualizar</button> | 
+                <button (click)="Cancelar()" class="btn btn-danger">Cancelar</button>
+            </form>
+        </div>
+    </div>
+</div>
